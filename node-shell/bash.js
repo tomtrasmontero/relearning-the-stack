@@ -8,7 +8,7 @@ process.stdin.on('data', function (data) {
 	let cmd = data.toString().trim(); //remove the newline
 
 	// process.stdout.write('You typed: ' + cmd);
-	console.log(data);
+
 	if (commands[cmd]){	
 		commands[cmd]();
 		process.stdout.write('\nprompt > ');
