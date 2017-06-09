@@ -32,5 +32,8 @@ app.get('/numbers/:x/:y', function(req, res){
 	res.send(msg+ " " + req.d);
 });
 
+//looks at request that matches /users, it will look into users.router.js
+app.use('/users', require('./users.router'));
+
 //create a server and listen to a port 3000 for a request
 app.listen(3000);
