@@ -1,0 +1,13 @@
+{% extends './layout.html' %}
+
+{% block main %}
+	<h2>Trash Here!</h2>
+	<ul class="list-group">
+
+		{% for item in trash %}
+		<!-- use _trashItem template and pass data to it -->
+			{% include './_trashItem.html' { item : item } %}
+
+		{% endfor %}
+	</ul>
+{% endblock %}

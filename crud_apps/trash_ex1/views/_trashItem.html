@@ -1,0 +1,8 @@
+<li class='list-group-item'>
+	{{ item.name }}
+	<br />
+	<!-- methodoverride ?_= to turn post into delete REST -->
+	<form method="POST" action="/trash/{{item.id}}?_method=DELETE">
+		<button type="submit" class="btn btn-danger">Delete</button>
+	</form>	
+</li>
