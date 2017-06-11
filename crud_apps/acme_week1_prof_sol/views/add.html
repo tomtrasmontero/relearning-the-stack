@@ -1,0 +1,11 @@
+{% extends './layout.html' %}
+{% block main %}
+	<h2>{{ title }}</h2>
+	<form method='POST' action='/products'>
+		<div class='form-group'>
+			<label>Name</label>
+			<input class='form-control' name='name' />
+		</div>
+		<button type='submit' class='btn btn-primary'>Create Product</button>
+	</form>	
+{% endblock %}
