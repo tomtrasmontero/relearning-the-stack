@@ -1,0 +1,12 @@
+{% extends './layout.html' %}
+
+{% block main %}
+	<h2>Add Products Page</h2>
+
+	<form method="POST" action="add/item">
+		Add New Product:
+		<input type="text" name="product">
+		<button type='submit' class='btn btn-primary'>Add</button>
+	</form>
+
+{% endblock %}

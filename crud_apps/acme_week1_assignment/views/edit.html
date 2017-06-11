@@ -1,0 +1,11 @@
+{% extends './layout.html' %}
+
+{% block main %}
+	<h2>Edit Product Page</h2>
+	<h4>{{item.name}}</h4>
+	<form method="POST" action="/products/edit/{{item.id}}?_method=PUT">
+		<input type='text' name='itemName'>
+		<button type="submit" class='btn btn-primary'>Edit</button>
+	</form>
+
+{% endblock %}

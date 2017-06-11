@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+
+{% block main %}
+	<h2> Products Page </h2>
+	<br />
+	<button type='button' class='btn btn-primary' onclick="window.location='/products/add'">Add Products</button>
+	
+	<ul class='list-group'>
+	{% for product in products %}
+		<li class='list-group-item'>
+			{{product.name}}
+			<br/>
+			
+			<form method="GET" action='/products/update/{{product.id}}/{{product.name}}'>
+				<button type='submit' class='btn btn-default'> Edit </button>
+			</form>
+			<!-- <button type='button' class='btn btn-default' onclick="window.location='/products/update/{{product.id}}"> Edit </button>
+ -->
+			<form method="POST" action='/products/delete/{{ product.id }}?_method=DELETE'>
+				<button type="submit" class='btn btn-danger'>Delete</button>
+			</form>
+		</li>
+	{% endfor %}
+		
+	</ul>
+	
+{% endblock %}
