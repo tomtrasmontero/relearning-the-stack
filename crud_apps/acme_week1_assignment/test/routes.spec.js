@@ -68,6 +68,8 @@ describe('routes', function(){
 			app.put('/products/edit/1')
 			.send("itemName=Jordan")
 			.end(function(err, res){
+				expect(302);
+				expect(res.text).to.contain('/products');
 				expect(Product.getProduct(1)[0].name).to.equal('Jordan');
 				done();
 			});
