@@ -1,15 +1,23 @@
-let _products = [
-	{
-		id:1,
-		name: "Shoe"
-	},
-	{
-		id:2,
-		name: "Shower Head"
-	}
-];
+let _products;
+let seed = function(){
+	_products = [
+		{
+			id:1,
+			name: "Shoe"
+		},
+		{
+			id:2,
+			name: "Shower Head"
+		}
+	];
+};
+
+//load seeded data
+seed();
+
 
 module.exports = {
+	resetSeed: () => seed(),
 	getProducts: () => _products,
 	add: (item) => _products.push({
 		id: _products.length,

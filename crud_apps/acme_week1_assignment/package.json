@@ -4,7 +4,7 @@
   "description": "",
   "main": "product.model.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon ./node_modules/mocha/bin/mocha",
     "start": "PORT=3000 nodemon server.js"
   },
   "author": "",
@@ -15,5 +15,10 @@
     "express": "^4.15.3",
     "method-override": "^2.3.9",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
