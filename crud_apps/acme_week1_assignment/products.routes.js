@@ -10,7 +10,7 @@ router.get('/add', function(req,res,done) {
 });
 
 router.post('/add/item', function(req,res,done){
-	Product.add(req.body.product);
+	Product.add(req.body);
 	res.redirect('/products');
 });
 
@@ -19,13 +19,12 @@ router.delete('/delete/:id', function(req,res,done){
 	res.redirect('/products');
 });
 
-
 router.get('/update/:productId/:productName', function(req, res, done){
 	res.render('edit', {title: 'edit', item: {id: req.params.productId, name: req.params.productName}});
 });	
 
 router.put('/edit/:itemId', function(req,res,done){
-	Product.editProduct(req.body.itemName, req.params.itemId);
+	Product.editProduct(req.body, req.params.itemId);
 	res.redirect('/products');
 });
 

@@ -17,7 +17,7 @@ describe('Product model', function(){
 		});
 
 		it('#add function adds additional product to the list',function(){
-			let productItem = "Guac";
+			let productItem = {product: "Guac"};
 
 			Product.add(productItem);
 
@@ -41,7 +41,7 @@ describe('Product model', function(){
 		});
 
 		it('#editProduct allows you to edit the name of a product', function(){
-			let newName = 'Jordans XXII';
+			let newName = {itemName: 'Jordans XXII'};
 
 			Product.editProduct(newName,1);
 

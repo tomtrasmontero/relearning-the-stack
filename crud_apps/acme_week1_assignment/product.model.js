@@ -19,11 +19,13 @@ seed();
 module.exports = {
 	resetSeed: () => seed(),
 	getProducts: () => _products,
-	add: (item) => _products.push({
-		id: _products.length,
-		name: item
-	}),
-	delete: function (id) {
+	add: function(item) {
+		 _products.push({
+			id: (_products[_products.length - 1].id + 1),
+			name: item.product
+		});
+	},
+	delete: function(id) {
 		let idx = 0;
 		
 		_products.map(function (e,i,arr) {
@@ -41,10 +43,10 @@ module.exports = {
 		});
 		return productItem;
 	},
-	editProduct: function(name,id){
+	editProduct: function(product,id){
 		_products.forEach(function (e,i,arr){
-			if(e.id === id*1){
-				e.name = name;
+			if(e.id === id * 1){
+				e.name = product.itemName;
 			}
 		});
 	}
