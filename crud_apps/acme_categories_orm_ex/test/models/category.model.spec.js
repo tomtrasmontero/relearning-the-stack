@@ -26,18 +26,32 @@ describe('Category & Product', function(){
 
 	describe('#findByName', function(){
 		it('there is one category named foo', function(done){
-			
-			console.log('++++++++++',Category);
 			Category.findByName('foo')
 			.then( (categories) => {
 				expect(categories.length).to.equal(1);
 				expect(categories[0].name).to.equal('foo');
+				// eql is deeply equal
+				expect(categories[0].products[0].name).to.equal('buzz');
 				done();
 			})
 			.catch( (err) => done(err))
 		});
 	});
 
+	describe('findBuzz', function(){
+		it('buzz has a category of foo', (done) => {
+			Product.findOne({ where: {
+				name: 'buzz'
+			}, include: [ Category ]
+			})
+			.then( product => {
+				expect(product.name).to.equal('buzz');
+				expect(product.category.name).to.equal('foo');
+				done();
+			})
+			.catch( err => done(err))
+		})
+	});
 
 	describe('#findAll', function(){
 		it('there are two categories', function(done){

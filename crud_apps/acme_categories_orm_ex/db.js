@@ -12,13 +12,21 @@ const Category = db.define('category', {
 //new way to have a class method in Category.
 Category.findByName = function(name){
 	return this.findAll({
-		where: {name: name}
+		where: {name: name},
+		include: [ Product ]
 	});
 };
 
 const Product = db.define('product', {
 	name: Sequelize.STRING
 });
+
+
+//define relationship
+Product.belongsTo(Category);
+Category.hasMany(Product);
+
+
 
 let _conn;
 
@@ -33,6 +41,8 @@ function connect(){
 }
 
 function seed() {
+let categories;
+
 //connect to database
 	return connect()
 	.then( () => db.sync({ force: true }))
@@ -40,7 +50,12 @@ function seed() {
 		let fooCreate = Category.create({ name: 'foo'} );
 		let barCreate = Category.create({ name: 'bar'} );
 		return Promise.all([ fooCreate, barCreate]);
-	}) 
+	})
+	.then( (result) => {
+		categories = result
+		return Product.create({ name: 'buzz', categoryId: categories[0].id});
+	})
+	.then( () => categories )
 
 }
 
