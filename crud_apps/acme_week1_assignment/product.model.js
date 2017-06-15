@@ -16,7 +16,7 @@ let seed = function(){
 seed();
 
 
-module.exports = {
+exports = {
 	resetSeed: () => seed(),
 	getProducts: () => _products,
 	add: function(item) {

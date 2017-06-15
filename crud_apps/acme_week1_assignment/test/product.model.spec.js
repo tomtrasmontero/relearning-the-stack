@@ -7,7 +7,7 @@ describe('Product model', function(){
 	});
 
 	it('exists', function(){
-		expect(Product).to.be.ok;
+		expect(Product).to.be.ok; 
 	})
 
 	describe('Product methods', function(){
@@ -41,13 +41,13 @@ describe('Product model', function(){
 		});
 
 		it('#editProduct allows you to edit the name of a product', function(){
-			let newName = {itemName: 'Jordans XXII'};
+			let newName = { itemName: 'Jordans XXII'};
 
 			Product.editProduct(newName,1);
 
 			expect(Product.getProduct(1)).to.have.lengthOf(1);
 			expect(Product.getProduct(1)).to.be.a('array');
 			expect(Product.getProduct(1)[0].name).to.equal('Jordans XXII');
-		})
+		});
 	});
 });
