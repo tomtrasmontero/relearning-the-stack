@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "CONN=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js",
+    "test": "CONN=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js --require babel-register --reporter spec || exit 0",
     "start": "PORT=3000 nodemon server.js --exec babel-node --presets es2015"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-register": "^6.24.1",
     "chai": "^4.0.2",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0"
