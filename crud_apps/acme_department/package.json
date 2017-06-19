@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "CONN=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js --require babel-register --reporter spec || exit 0",
-    "start": "PORT=3000 nodemon server.js --exec babel-node --presets es2015"
+    "test": "CONN=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js",
+    "start": "PORT=3000 nodemon server.js "
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "method-override": "^2.3.9",
+    "sequelize": "^4.1.0",
     "swig": "^1.4.2"
   }
 }

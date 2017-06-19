@@ -1,5 +1,6 @@
-/*jshint node: true */
 'use strict';
+const Sequelize = require('sequelize');
+
 
 const product = {
 	test: 'test'
@@ -7,7 +8,7 @@ const product = {
 
 
 
-export { 
+module.exports = { 
 	product
 };
 

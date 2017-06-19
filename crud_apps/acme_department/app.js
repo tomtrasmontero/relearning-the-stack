@@ -1,13 +1,16 @@
-/*jshint node: true */
 'use strict';
 
-import express from 'express';
-import bodyParser from 'body-parser';
-import methodOverride from 'method-override';
-import swig from 'swig';
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const swig = require('swig');
 swig.setDefaults({ cache: false });
-
 const app = express();
 
-export { app };
+
+
+app.get('/', function(req,res,next){
+	res.send('200 OK');
+});
+
+module.exports = app;

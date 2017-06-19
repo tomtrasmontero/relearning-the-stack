@@ -1,20 +1,28 @@
-/*jshint node: true */
-// 'use strict';
+'use strict';
 
-import chai from  'chai';
-import Product from '../models/product.model';
-import supertest from 'supertest';
-import App from '../app';
+const expect = require('chai').expect;
+const app = require('supertest')(require('../app'));
 
-const expect = chai.expect;
-// const app = require('supertest')(require('../app'));
-const app = supertest.App;
 
 describe('routes', function (){
 	beforeEach(function(){
-		console.log(Product);
+		console.log('beforeEach is good');
 	});
 
+	describe('GET /', function(){
+		it('returns ok', function (done){
+			app.get('/')
+			.expect(200)
+			.end((err, res) => {
+				expect(res.text).to.contain('OK');
+				expect(200, 'ok');
+				done();
+			});
+		});
+	});
 
-
+  it('404 everything else', function (done) {
+    app.get('/foo/bar')
+       .expect(404, done);
+  });	
 });
