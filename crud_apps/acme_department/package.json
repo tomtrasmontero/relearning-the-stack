@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "CONN=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js",
-    "start": "PORT=3000 nodemon server.js "
+    "test": "CONN=postgres://localhost/acme_department DATABASE_URL=postgres://localhost/acme_department nodemon -e js,html ./node_modules/mocha/bin/mocha test/**/*.js",
+    "start": "PORT=3000 nodemon server.js ",
+    "start:dev": "PORT=3000 SYNC=true DATABASE_URL=postgres://localhost/acme_department nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "method-override": "^2.3.9",
+    "pg": "^6.3.0",
     "sequelize": "^4.1.0",
     "swig": "^1.4.2"
   }

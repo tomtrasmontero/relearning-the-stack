@@ -3,13 +3,12 @@
 const expect = require('chai').expect;
 const app = require('supertest')(require('../app'));
 
-
-describe('routes', function (){
+describe('routes', () => {
 	beforeEach(function(){
 		console.log('beforeEach is good');
 	});
 
-	describe('GET /', function(){
+	describe('GET /', () => {
 		it('returns ok', function (done){
 			app.get('/')
 			.expect(200)
@@ -21,7 +20,7 @@ describe('routes', function (){
 		});
 	});
 
-  it('404 everything else', function (done) {
+  it('404 everything else',(done) => {
     app.get('/foo/bar')
        .expect(404, done);
   });	

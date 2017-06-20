@@ -8,7 +8,6 @@ swig.setDefaults({ cache: false });
 const app = express();
 
 
-
 app.get('/', function(req,res,next){
 	res.send('200 OK');
 });
