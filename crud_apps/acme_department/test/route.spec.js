@@ -2,6 +2,7 @@
 
 const expect = require('chai').expect;
 const app = require('supertest')(require('../app'));
+const seed = require('../db/index').seed;
 
 describe('routes', () => {
 	beforeEach(function(){
