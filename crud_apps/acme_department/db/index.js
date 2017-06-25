@@ -6,7 +6,7 @@ let _conn;
 
 
 //Customer Table
-const Customer = db.define('customer', {
+const Customer = db.define("customers", {
 	name: Sequelize.STRING,
 });
 
@@ -28,7 +28,7 @@ Customer.makeCustomer = (custId) => {
 
 
 //Department Table
-const Department = db.define('department', {
+const Department = db.define("departments", {
 	name: Sequelize.STRING,
 	isDefault: Sequelize.BOOLEAN
 });
@@ -63,6 +63,7 @@ Customer.belongsTo(Department);
 Department.hasMany(Customer);
 
 
+
 //connection, return connection if its already established, also used by testing
 function connect(){
 	if ( _conn ){
@@ -73,8 +74,6 @@ function connect(){
 	}
 }
 
-
-
 //seed function - mostly for testing
 function seed(){
 	//connect to database
@@ -84,11 +83,12 @@ function seed(){
 		let fooDepartment = Department.create({ name: 'foo', isDefault : true });
 		let barDepartment = Department.create({ name: 'bar'});
 		let buzzCustomer = Customer.create({ name: 'buzz'});
+		let bazCustomer = Customer.create({ name: 'baz'});
 
-		return Promise.all([fooDepartment,barDepartment,buzzCustomer]);
+		return Promise.all([fooDepartment,barDepartment,buzzCustomer,barDepartment]);
 	})
 	.then( (result) => {
-		return [ result[0], result[1], result[2]]; 
+		return [ result[0], result[1], result[2], result[3]]; 
 	});
 }
 

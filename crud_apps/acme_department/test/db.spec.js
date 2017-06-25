@@ -6,7 +6,7 @@ const db = require('../db/index').models;
 const seed = require('../db/index').seed;
 
 describe('database', () => {
-	let foo, bar, buzz;
+	let foo, bar, buzz, baz;
 
 	beforeEach( (done) => {
 		seed()
@@ -14,6 +14,7 @@ describe('database', () => {
 			foo = result[0].get();
 			bar = result[1].get();
 			buzz = result[2].get();
+			baz = result[3].get();
 			done();
 		})
 		.catch( (err) => done(err) );
@@ -40,6 +41,18 @@ describe('database', () => {
 			});
 		});
 
+		it('can delete a department', (done) => {
+			db.Department.destroy({ where: { name: "bar"} })
+			.then( (numRowDestroyed) => {
+				return db.Department.findAll();
+			})
+			.then( (result) => {
+				expect(result.length).to.equal(1);
+				done();
+			})
+			.catch((err) => done(err));
+		});		
+
 		it('can change the default department', (done) => {
 			
 			db.Department.getDefault()
@@ -47,19 +60,19 @@ describe('database', () => {
 				expect(defaultDepartment[0].name).to.equal('foo');
 				expect(defaultDepartment[0].isDefault).to.equal(true);				
 				//make bar the default dept passing in id.
-				return db.Department.updateDefaultDept(2)
+				return db.Department.updateDefaultDept(bar.id)
 				.then( (result) => {			
 					expect(result[0].name).to.equal('foo');
 					expect(result[0].isDefault).to.equal(false);
 					expect(result[1].name).to.equal('bar');
 					expect(result[1].isDefault).to.equal(true);
+					done();
 				});
 			});
-			done();
 		});
 	});
 
-	describe('Customer table', () => {
+	describe('Customer/User table', () => {
 		it('default users do not have a department', (done) => {
 			db.Customer.create({ name: 'wally'})
 			.then( (result) => {
@@ -69,12 +82,24 @@ describe('database', () => {
 			});
 		});
 		
+		
 		it('can turn users into customers by passing user id and assinged the default department', (done) => {
 			db.Customer.makeCustomer(1)
 			.then( (result) => {
 				expect(result.departmentId).to.equal(1);
+				done();
 			});
-			done();
+		});
+
+		it('can delete a user', (done) => {
+			db.Customer.destroy({ where: { name: "baz"} })
+			.then( (numRowDestroyed) => {
+				return db.Customer.findAll();
+			})
+			.then( (result) => {
+				expect(result.length).to.equal(1);
+				done();
+			});
 		});
 	});
 });
