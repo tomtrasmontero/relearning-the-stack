@@ -1,8 +1,19 @@
 <html>
 <head>
-	<title>Acme Users</title>
+	<title> {{ title }}</title>
+	<link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css' />
 </head>
 <body>
-	Home
+	<ul class='nav nav-tabs'>
+		<li><a href='/'>Home</a></li>
+		<li><a href='/department'>Department</a></li>
+		<li><a href='/customers'>Customer</a></li>
+	</ul>
+
+	<div class='container'>
+	{% block main %}
+
+	{% endblock %}
+	</div>
 </body>
 </html>

@@ -14,7 +14,7 @@ describe('routes', () => {
 			app.get('/')
 			.expect(200)
 			.end((err, res) => {
-				expect(res.text).to.contain('OK');
+				expect(res.text).to.contain('HOME');
 				expect(200, 'ok');
 				done();
 			});

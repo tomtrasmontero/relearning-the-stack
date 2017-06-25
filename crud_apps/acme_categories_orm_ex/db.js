@@ -27,7 +27,6 @@ Product.belongsTo(Category);
 Category.hasMany(Product);
 
 
-
 let _conn;
 
 function connect(){

@@ -1,0 +1,11 @@
+{% extends './layout.html' %}
+{% block main %}
+	<h2>{{ title }}</h2>
+	<form method='POST' action='/department'>
+		<div class='form-group'>
+			<label> Add Department </label>
+			<input class='form-control' name="department_name">
+		</div>
+		<button type='submit' class='btn btn-primary'> Create Department </button>
+	</form>
+{% endblock %}

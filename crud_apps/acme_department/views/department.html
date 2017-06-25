@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+{% block main %}
+	<h2>{{ title }}</h2>
+	<form method='POST' action='/department'>
+		<div class='form-group'>
+			<label> Create Employee </label>
+			<input class='form-control' name="employee_name">
+		</div>
+		<button type='submit' class='btn btn-primary'> Create Employee </button>
+	</form>
+	<div class='well'>
+		<h4>Default Department : {{ defaultDept.name }}</h4>
+		{% for department in deptsInfo %}
+		<span class='label label-info'>{{ department.name }}</span>
+		{% endfor %}
+	</div>
+	<div>
+		<ul class='list-group'>
+		{% for customer in customerInfo%}
+			<li class='list-group-item'>
+				{{ customer.name }} 
+				<form method='POST' action='/department/delete/:custId?_method=DELETE'>
+					<button type='submit' class='btn btn-danger'>Delete</button>
+				</form >
+				<form method='POST' action='/department/:custId?_method=PUT'>
+					<button type='submit' class='btn btn-default'>Make Customer</button>
+				</form >				
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
