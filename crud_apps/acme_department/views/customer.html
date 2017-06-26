@@ -1,4 +1,24 @@
 {% extends './layout.html' %}
 {% block main %}
 	<h2>{{ title }}</h2>
+	<form method='POST' action='/customers/newEmployee'>
+		<div class='form-group'>
+			<label> Create Employee </label>
+			<input class='form-control' name="employee_name">
+		</div>
+		<button type='submit' class='btn btn-primary'> Create Employee </button>
+	</form>	
+	<div>
+		{% for customer in customersData %}
+		<li class='list-group-item'>
+			{{ customer.name }} 
+			<form method='POST' action='/customers/delete/{{ customer.id }}?_method=DELETE'>
+				<button type='submit' class='btn btn-danger'>Delete</button>
+			</form >
+			<form method='POST' action='/customers/makeUser/{{ customer.id }}?_method=PUT'>
+				<button type='submit' class='btn btn-default'>Make User</button>
+			</form >				
+		</li>
+		{% endfor %}
+	</div>
 {% endblock %}

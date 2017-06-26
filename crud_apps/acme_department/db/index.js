@@ -44,14 +44,15 @@ Department.updateDefaultDept = (deptId) => {
 	.then ( (result) => {
 
 		//update old default and return result
-		let updateOldDefault = result[0].update( { isDefault: false}, 
+		return result[0].update( { isDefault: false}, 
 		{ where: { id: result.id }, returning: true, plain: true });
-
+	})
+	.then( (oldData) => {
 		//update new default and return result
-		let updateNewDefault = Department.update( { isDefault: true }, 
-		{ where: { id: deptId }, returning: true, plain:true });
-
-		return Promise.all([ updateOldDefault , updateNewDefault ]);
+		let newDept = Department.update( { isDefault: true }, 
+		{ where: { id: deptId }, returning: true, plain:true });	
+		
+		return Promise.all([ oldData , newDept ]);
 	})
 	// returns the array [ updated old data, updated new data];
 	.then( (resultArr) => [ resultArr[0].dataValues , resultArr[1][1].dataValues ]);
