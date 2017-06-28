@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<link rel='stylesheet' href='/node_modules/bootstrap/dist/css/bootstrap.css'/>
+	<script src="/node_modules/angular/angular.js"></script>
+	<script src='/app.js'></script>
 </head>
-<body>
-    Hello!!!
+<!-- bootstrap angular module 'app' -->
+<body ng-app='app'>
+	<div class="container">
+    	<h1>Todo List</h1>
+
+    	<div ng-controller="TodoCtrl">
+    		<ul class='list-group'>
+	    		<li ng-repeat='todo in todos' class='list-group-item'>
+	 				{{ todo.name }} {{ todo.id }}
+	 				<button ng-click='destroy(todo.id)' class='btn btn-danger pull-right'>Remove</button>
+	 				<br clear='all'/>
+	    		</li>
+    		</ul>
+    	</div>	
+	</div>
 </body>
 </html>
