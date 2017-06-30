@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css'/>
+	<script src='/angular/angular.js'></script>
+	<script src='/app.js'></script>
+	<script src='/TodoListCtrl.js'></script>
+	<script src='/TodoService.js'></script>
+	<script src='/TodoSummaryCtrl.js'></script>
+</head>
+<body ng-app='todo'>
+	<div class='container'>
+		<h1>Todo App</h1>
+
+		<div class='well' ng-controller='TodoSummaryCtrl'>
+			There are {{ todos.length }} things to be done!!
+		</div>
+
+		<div ng-controller='TodoListCtrl'>
+			<div class='well'>
+				<div class='form-group'>
+					<input ng-model='name' class='form-control' placeholder="enter todo">
+				</div>
+				<button ng-disabled='!name' class='btn btn-primary' ng-click='create()'> Create Todo </button>
+			</div>
+			<ul class='list-group'>
+				<li class='list-group-item' ng-repeat='todo in todos'>
+					{{ todo.name }}	
+					<button class='btn btn-danger' ng-click='destroy(todo)'>Delete</button>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</body>
+</html>
