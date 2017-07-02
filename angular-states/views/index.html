@@ -1,0 +1,28 @@
+<html>
+<head>
+	<link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css' />
+	<script src='/angular/angular.js'></script>
+	<script src='/angular-ui-router/release/angular-ui-router.js'></script>
+	<script src='/app.js'></script>
+	<script src='/TodoListCtrl.js'></script>
+	<script src='/TodoFactory.js'></script>
+</head>
+<body ng-app='todoApp'>
+	<div class='container' style='margin-bottom: 10px'>
+		<ul class='nav nav-tabs'>
+		  <li ui-sref-active='active'>
+		  <!-- name of the state in the ui router -->
+		    <a ui-sref='home'>Home</a>				
+		  </li>
+		  <li ui-sref-active='active'>
+		  	<a ui-sref="todos">Products</a>
+		  </li>
+		  <li ui-sref-active='active'>
+		  	<a ui-sref="tabs">Tabs</a>
+		  </li>
+		</ul>
+		<!-- this corresponds with the ui router -->
+		<ui-view></ui-view>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<h1>Todos</h1>
+<div class='alert alert-success' ng-if='todos.length === 0'>
+	You have no todos
+</div>
+<div class='well'>
+	<div class='form-group'>
+		<input class='form-control' placeholder="add todos" ng-model='name'/>
+	</div>
+	<button class='btn btn-primary' ng-click='create()' ng-disabled='!name'>Create Todo</button>
+</div>
+<ul class='list-group'>
+  <li ng-repeat='todo in todos' class='list-group-item'>
+  {{ todo.name }}
+  </li>
+</ul>  
