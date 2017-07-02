@@ -2,7 +2,7 @@
 angular.module('todoApp', ['ui.router']);
 
 angular.module('todoApp')
-	.config( ($stateProvider, $urlRouterProvider) => {
+	.config( ($stateProvider, $urlRouterProvider, $locationProvider) => {
 		$stateProvider
 		  .state('home', {
 		  	//tell what view the state corresponds to
@@ -19,6 +19,9 @@ angular.module('todoApp')
 		  	url: '/tabs',
 		  	templateUrl: '/tabs.html'
 		  });		  
+
+		  //get rid of the # in the url
+		  $locationProvider.html5Mode(true);
 
 		  //if the state does not match, redirect to /
 		  $urlRouterProvider.otherwise('/');
