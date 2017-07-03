@@ -11,13 +11,9 @@ angular.module('appForms')
   	  .state('tabs', {
   	  	url:'/tabs',
   	  	templateUrl: 'tabs.html',
-  	  	constroller: function($state){
-  	  		//to get a default state when clicking on the tabs state
-  	  		if($state.includes('tabs')){
-  	  			console.log($state.current.name);
-  	  			$state.go('tabs.people');
-  	  		}
-  	  	}
+  	  	// tabs will not be viewed as it will always default to child state and template must be ui-view
+  	  	// abstract: true,
+  	  	// template:'<ui-view></ui-view>'
   	  })
   	  //nested states - since its nested this is /tabs/people
   	  .state('tabs.people', {
@@ -82,6 +78,8 @@ angular.module('appForms')
   	  	}
   	  });
 
+  	  // redirects when tabs state is selected to the child state;
+  	$urlRouterProvider.when('/tabs', '/tabs/people');
   	$urlRouterProvider.otherwise('/');
 
   });
