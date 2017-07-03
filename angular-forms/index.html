@@ -2,12 +2,14 @@
 <head>
 	<link rel="stylesheet" type="text/css" href='/bootstrap/dist/css/bootstrap.css'>
 	<script src='/angular/angular.js'> </script>
+	<script src='/angular-ui-router/release/angular-ui-router.js'></script>
 	<script src='/app.js'> </script>
-	<script src='/config.js'> </script>	
+	<script src='/config.js'> </script>
+	<script src='/PeopleService.js'> </script>
 </head>
 <body ng-app='appForms'>
 	<div class='container'>
-		<ul class='nav nav-tabs'>
+		<ul class='nav nav-tabs' style='margin-bottom: 10px'>
 			<li ui-sref-active='active'>
 				<a ui-sref="home">Home</a>
 			</li>
@@ -15,7 +17,7 @@
 				<a ui-sref="tabs">Tabs</a>
 			</li>			
 		</ul>
+		<ui-view></ui-view>
 	</div>
-    {{ 100 + 100 }}
 </body>
 </html>

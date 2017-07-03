@@ -1,0 +1,8 @@
+<ul class='list-group'>
+  <li ng-repeat='person in people' class='list-group-item'>
+  <a ui-sref='tabs.people.person({id:person.id})'> {{ person.name }} </a>
+  </li>
+</ul>
+<div class='well'>
+	<ui-view></ui-view>
+</div>

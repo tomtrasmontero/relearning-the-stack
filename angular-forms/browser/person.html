@@ -1,0 +1,20 @@
+<!-- naming a form in angular will get create scope and object form = form, input name=name form.name is the input  -->
+<form name='form'>
+	<div class='form-group'>
+	  <input name='name' required class='form-control' ng-model='person.name' placeholder='name' />
+	  {{ form.name.$valid }}
+	</div>
+	<div class='form-group'>
+	<!-- form email will return invalid if its not in email format -->
+	  <input name='email' type='email' required class='form-control' ng-model='person.email' placeholder='email'/>
+	</div>	
+	<div class='form-group'>
+	<!-- ng-options show name instead of id for deparment in departments-->
+	<!-- ng-model will use the id but the ui will show the name in the select -->
+		<select ng-model='person.departmentId' class='form-control' ng-options='department.id as department.name for department in departments' ></select>
+		{{ person.departmentId }}
+	</div>
+	<!-- if the form in invalid the button is disabled -->
+	  <button ng-disabled='form.$invalid' class='btn btn-primary' ng-click='save()'>SAVE</button>
+	  <button class='btn btn-default' ng-click='cancel()'>Cancel</button>
+</form>

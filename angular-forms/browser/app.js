@@ -1,1 +1,1 @@
-angular.module('appForms', []);
+angular.module('appForms', ['ui.router']); 
