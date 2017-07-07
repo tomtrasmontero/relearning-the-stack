@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const conn = new Sequelize(process.env.DATABASE_URL);
 
-const User = conn.define( 'user' , {
+const User = conn.define('user', {
 	name: conn.Sequelize.STRING
 });
 
