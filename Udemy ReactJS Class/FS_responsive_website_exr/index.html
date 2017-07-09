@@ -3,19 +3,46 @@
 <head>
 	<title>My CSS Website</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script type="text/javascript" src="./app.js"></script>
 </head>
 <body>
   <nav>
-	<ul class="topnav">
+	<ul class="topnav" id="dropdownClick">
 		<li><a href="#home">Home</a></li>
 		<li><a href="#news">News</a></li>
 		<li><a href="#contact">Contact</a></li>
 		<li><a href="#about">About</a></li>
 		<li class="topnav-right"><a href="#signin">Sign Up</a></li>
 		<li class="topnav-right"><a href="#login">Log In</a></li>
-		<li class="dropdownIcon"><a href="">&#9776;</a></li>
+		<!-- javascript:void(0) the path is undefine, make the view stay instead of refreshing. hamburger stays -->
+		<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
 	</ul>  	
   </nav>
+  <div class="container" id="section-1-gradient">
+    <div class="row">
+      <div class="col-6 leftSide-col">
+      	<div>
+      	  <h1 class="large">Crazy Radness</h1>
+      	  <h1 class="large">Made for Developers</h1>
+      	</div>
+      	<form>
+      	  <div>
+      	  	<h2>Username</h2>
+      	  	<input class="inputbox" type="text" placeholder="Username" name="username">
+      	  	<h2 class="inputbox">Password</h2>
+      	  	<input class="inputbox" type="text" placeholder="Password" name="password">
+      	  </div>
+      	</form>
+      </div>
+      <div class="col-6">
+      	
+      </div>	
+    </div>
+  </div>
+
+
+
+
 
 
 </body>
