@@ -1,0 +1,71 @@
+/*
+body {
+	background-color: #cc99ff;
+}
+
+h1 {
+	color: red;
+	text-align: center;
+}
+
+//grab a class use ".", "#"" for id
+.square {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	//margin auto puts equal size of margin to element to center it
+	margin: auto;
+}
+
+#circle{
+	color: darkred;
+	font-size: 40px;
+	margin: 
+}
+*/
+
+/*different ways to style the color*/
+/*.container {
+	background: linear-gradient(to left, #00ccff, #b3f0ff);
+	box-shadow: 3px 5px 3px black;
+	margin: 0 auto;
+	width: auto;
+}
+
+h1 {
+	color: #ffffff;
+	text-shadow: 2px 2px 5px black;
+	display: inline;
+	text-align: center;
+	margin: auto;
+}
+
+h2 {
+	color: rgb(0, 204, 255);
+	text-shadow: 1px 1px 3px darkblue;
+}*/
+
+body {
+	background-color: #E9967A;
+}
+
+h1 {
+	text-align: auto;
+	color: red;
+	text-shadow: 2px 2px 5px black;
+}
+
+.parName {
+	color: blue;
+}
+
+/* any unorder list with li inherit this style rules*/
+ul li {
+	color: white;
+	font-size: 20px;
+}
+
+ul > li {
+	color: yellow;
+}
+
