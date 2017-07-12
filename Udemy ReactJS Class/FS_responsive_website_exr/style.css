@@ -197,7 +197,28 @@ input[type="text"] {
 	border-radius: 7px;
 }
 
+footer.footsy {
+	background-color: #666;
+	padding-left: 10%; 
+}
 
+footer.footsy h1 {
+	color: #fff;
+	font-size: 35px;
+}
+
+footer.footsy ul {
+	/*removes the bullet points of the list item tag*/
+	list-style: none;
+	text-align: left;
+	padding-left: 0;
+}
+
+footer.footsy ul li {
+	color: white;
+	font-size: 22px;
+	line-height: 1.5;
+}
 /*############### Mobile ################*/
 
 /*media query, screen detects width.  At 680px this will trigger*/
@@ -249,6 +270,11 @@ article p {
 	.col-4 {
 		width: 100%;
 		margin: 0;
+	}
+
+	div.mobileStack{
+		width: 50%;
+		display: block;
 	}
 
 	div.box {
