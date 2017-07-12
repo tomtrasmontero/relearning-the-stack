@@ -4,6 +4,7 @@
 	<title>My CSS Website</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<script type="text/javascript" src="./app.js"></script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 </head>
 <body>
   <nav>
@@ -20,13 +21,13 @@
   </nav>
   <div class="container" id="section-1-gradient">
     <div class="row">
-      <div class="col-6 leftSide-col">
-      	<div>
+      <div class="col-6">
+      	<div class="leftSide-col">
       	  <h1 class="large">Crazy Radness</h1>
       	  <h1 class="large">Made for Developers</h1>
       	</div>
       	<form>
-      	  <div>
+      	  <div class="leftSide-col">
       	  	<h2>Username</h2>
       	  	<input class="inputbox" type="text" placeholder="Username" name="username">
       	  	<h2 class="inputbox">Password</h2>
@@ -35,15 +36,77 @@
       	</form>
       </div>
       <div class="col-6">
-      	
+      	<div class="rightSide-col">
+      	  <div class="videoContainer">
+   		    <iframe width="560" height="315" src="https://www.youtube.com/embed/mtQ4BYROG7k" frameborder="0" allowfullscreen></iframe>
+      	  </div>
+      	</div>
       </div>	
     </div>
   </div>
 
+<!-- will sit ontop of the div , it acts like a container -->
+  <header>
+    <h1 class="section2Header">The Standards of Awesomeness</h1>
+  </header>
+  <div class="container">
+    <div class="row">
+ 
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="./devicon.png">
+          </div>
+          <label>Chat with Me</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.</p>
+        </div>
+      </div>
 
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="./devicon.png">
+          </div>
+          <label>Learn to Code</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.</p>
+        </div>
+      </div>    
 
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="./devicon.png">
+          </div>
+          <label>Build an Empire</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.</p>
+        </div>
+      </div>
 
-
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="learnMore">Learn More</button>
+      </div>
+    </div>
+  </div>
+  <!-- add lines through our page -->
+  <hr>
+  <div class="container">
+  <!-- make the column div inside the specific column space instead of taking up 100% width -->
+    <div class="row">
+      <div class="col-7">
+        <!-- put comment, news article, blog post inside the article . paragraph tag adds a default margin inside the article-->
+        <article>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis rutrum massa eget ornare. Etiam ut facilisis metus.</p>
+        </article>
+      </div>
+      <div class='col-5'>
+        <div class="slopeIcon">
+          <img src="./iOS-Slope.png">
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
