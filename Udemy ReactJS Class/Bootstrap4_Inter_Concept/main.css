@@ -20,7 +20,53 @@
 button.getInfo {
 	background-color: red;
 	color: #ffffff;
+	cursor: pointer;
 	/* use display block so we can move the button around*/
 	display: block;
+	margin: auto;
+}
+
+h5.modal-title {
+	margin:	auto;
+}
+
+.modalFormWrapper {
+	padding: 2rem;
+}
+
+.imgCenter {
+	display: block;
+	margin: auto;
+}
+
+.btnCenter	{
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	width: 66%;
+}
+
+.footerImg	{
+	padding: 15px;
+}
+
+.fa {
+	margin: 10px;
+}
+
+.fa-facebook-square {
+	color: #3b5998;
+}
+
+.fa-google-plus-square  {
+	color: #c32f10;
+}
+
+.fa-instagram  {
+	color: #ffffff;
+}
+
+.socialWrapper  {
 	margin: auto;
 }

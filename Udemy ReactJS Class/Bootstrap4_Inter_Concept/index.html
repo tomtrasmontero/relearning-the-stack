@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
   <!-- Custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 <link rel="stylesheet" href="main.css">
 
 </head>
@@ -123,13 +124,157 @@
     <div class="row">
         <div class="col-sm-12">
           <div class="coolStuffWrapper">
-            <button type="button" class="btn btn-lg getInfo">Get Info</button>
+          <!-- data-toggle will trigger the modal, data-target needs to start with # -->
+            <button type="button" class="btn btn-lg getInfo" data-toggle="modal" data-target="#coolStuffModal">Get Info</button>
           </div>
         </div>
       </div>
   </div>
+
+  <div class="sectionLight">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-12 col-lg-4">
+            <img src="assets/kickflip.jpg" class='img-fluid imgCenter'>
+            <div class="row">
+              <div class="col-sm-12">
+              <!-- add data toggle ="modal" to activate the modal and data target to id it.  it accepts id # and class . -->
+                <button type="button" data-toggle="modal" data-target=".kf-modal-lg" class="btn btn-lg btn-danger btnCenter">Kickflip</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4">
+            <img src="assets/360flip.jpg" class='img-fluid imgCenter'>
+            <div class="row">
+              <div class="col-sm-12">
+                <button type="button" data-toggle="modal" data-target=".360-modal-md" class="btn btn-lg btn-danger btnCenter">360 Flip</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4">
+            <img src="assets/bscrook.jpg" class='img-fluid imgCenter'>
+            <div class="row">
+              <div class="col-sm-12">
+                <button type="button" data-toggle="modal" data-target=".bscrook-modal-sm" class="btn btn-lg btn-danger btnCenter">BS Crook</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer bg-inverse">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-lg-3">
+        <img src="assets/KFS_LIGHT.png" class="img-fluid footerImg">
+      </div>
+      <div class="col-sm-12 col-lg-9 socialWrapper">
+      <!-- embedded favicon inside the anchor tag will make it clickable adding target="_blank" will open a new tab in browser -->
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+        </a>  
+        <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Modal - Seperate Modal witht he markup -->
+  <!-- data target name will trigger this modal from data-target to modal id-->
+  <div class="modal fade" id="coolStuffModal" tabindex="-1" role="dialog" aria-labelledby="coolStuffLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title" id="contentLabel">Get Exclusive Content</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <img src="assets/KFS_modal.png" class="img-fluid">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">  
+                <div class="modalFormWrapper">
+                  <form>
+                    <div class="form-group">
+                      <label for="formName">What's your name?</label>
+                      <input type="text" class="form-control" id="formName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="formEmail">Where should we send your cool content?</label>
+                      <input type="email" class="form-control" id="formEmail" placeholder="Email">
+                    </div>
+                  </form>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+
+
+
+<!-- MODAL -->
+
+<!-- Kickflip Modal -->
+
+<div class="modal fade kf-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WrO9PTpuSSs" allowfullscreen></iframe>
+      </div>
+    <p>Kickflips are easy.  Pop, flick, catch, land. #Nujabes</p>
+    </div>
+  </div>
+</div>
+
+<!-- 360 Modal -->
+<div class="modal fade 360-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WrO9PTpuSSs" allowfullscreen></iframe>
+      </div>
+    <p>360 Flips are easy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BS Crook Modal -->
+<div class="modal fade bscrook-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WrO9PTpuSSs" allowfullscreen></iframe>
+      </div>
+    <p>BS Crook</p>
+    </div>
+  </div>
+</div>
 
   
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
