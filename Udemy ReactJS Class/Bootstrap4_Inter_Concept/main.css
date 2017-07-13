@@ -1,0 +1,26 @@
+.jumbotron {
+	text-align: center;
+	background: none;
+}
+
+.sectionLight {
+	background-color: #eceeef;
+	padding: 2rem;
+}
+
+.sectionDark {
+	background-color: #cccccc;
+	padding: 2rem;
+}
+
+.coolStuffWrapper {
+	margin-top: 20px;
+}
+
+button.getInfo {
+	background-color: red;
+	color: #ffffff;
+	/* use display block so we can move the button around*/
+	display: block;
+	margin: auto;
+}
